@@ -1,0 +1,40 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      APP_ENV: production
+      WEB_ORIGIN: http://localhost:8080
+      TOKEN_SECRET: local-compose-secret-change-before-deployment
+      DATABASE_PATH: /app/.data/docuflux.db
+      UPLOAD_DIRECTORY: /app/.data/uploads
+      PIPELINE_WORKER_ENABLED: "true"
+    volumes:
+      - docuflux-data:/app/.data
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health')",
+        ]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  web:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    depends_on:
+      api:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+
+volumes:
+  docuflux-data:

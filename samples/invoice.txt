@@ -1,0 +1,11 @@
+INVOICE #NS-2048
+
+Northstar Cloud Services
+Invoice date: July 29, 2026
+Due date: August 29, 2026
+
+Platform operations package: USD $18,420.00
+Payment terms: Net 30
+Billing contact: accounts@northstar.example
+
+Thank you for your business.

@@ -1,0 +1,11 @@
+MUTUAL NON-DISCLOSURE AGREEMENT
+
+This agreement is between Arcline Labs and Ember Systems.
+Effective date: July 1, 2026.
+
+The agreement automatically renews for successive twelve-month terms.
+Each party accepts unlimited liability for unauthorized disclosure.
+Governing law: State of New York.
+
+All technical and commercial information exchanged under this agreement is
+confidential and may be used only for the evaluation of the proposed project.
